@@ -8,7 +8,7 @@ ARG BASE_CONTAINER=ghcr.io/ucsd-ets/datascience-notebook:stable
 
 FROM $BASE_CONTAINER
 
-LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
+LABEL maintainer="wcheung@ucsd.edu"
 
 # 2) change to root to install packages
 USER root
