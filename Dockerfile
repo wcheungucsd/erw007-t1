@@ -19,8 +19,15 @@ RUN apt-get -y install htop
 USER jovyan
 
 # RUN conda install -y scikit-learn
+RUN conda config --add channels defaults
+RUN conda config --add channels bioconda
+RUN conda config --add channels conda-forge
+RUN conda config --set channel_priority strict
 
-RUN pip install --no-cache-dir networkx scipy
+RUN conda install -y bioconda::fastqc
+RUN conda install -y bioconda::bowtie2
+
+#RUN pip install --no-cache-dir networkx scipy
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
